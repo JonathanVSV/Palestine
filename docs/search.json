@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Palestine",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "0.intro.html",
+    "href": "0.intro.html",
+    "title": "1  Intro",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+    ]
+  },
+  {
+    "objectID": "1.pre2023.html",
+    "href": "1.pre2023.html",
+    "title": "2  Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)</span>"
+    ]
+  },
+  {
+    "objectID": "2.ocupacion.html",
+    "href": "2.ocupacion.html",
+    "title": "3  La Ocupación",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>La Ocupación</span>"
+    ]
+  },
+  {
+    "objectID": "3.apartheid.html",
+    "href": "3.apartheid.html",
+    "title": "4  El Apartheid",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>El Apartheid</span>"
+    ]
+  },
+  {
+    "objectID": "4.genocidio.html",
+    "href": "4.genocidio.html",
+    "title": "5  El Genocidio",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>El Genocidio</span>"
+    ]
+  }
+]

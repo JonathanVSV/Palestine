@@ -1,0 +1,47 @@
+project:
+  type: book
+  # para html
+  output-dir: docs
+
+book:
+  title: "Palestine"
+  output-file: "Palestine"
+  author: "JF Mas, A Pérez Vega, JV Solórzano"
+  date: Sys.date()
+  page-navigation: true
+  sidebar:
+    style: docked
+    background: light
+  # cover-image: cover.png
+  chapters:
+    - index.qmd
+    - 0.intro.qmd
+    - 1.pre2023.qmd
+    - 2.ocupacion.qmd
+    - 3.apartheid.qmd
+    - 4.genocidio.qmd
+    - references.qmd
+  search: true
+  # repo-url: https://github.com/jjallaire/hopr/
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  page-footer: 
+    left: "Copyright 2021, Norah Jones" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter 
+        href: https://twitter.com/ 
+
+bibliography: references.bib
+csl: citestyle.csl
+
+format:
+  html:
+    theme: cosmo
+  # Faltan algunos paquetes para exportar a pdf  
+  # pdf:
+  #   documentclass: scrreprt
+
+editor: visual
+

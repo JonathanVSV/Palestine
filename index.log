@@ -1,0 +1,61 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2025.9.1)  1 SEP 2025 20:14
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./index.tex
+(index.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-09-28>
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrreprt
+.cls
+Document Class: scrreprt 2025/08/28 v3.47 KOMA-Script document class (report)
+
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase
+.sty
+Package: scrkbase 2025/08/28 v3.47 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.
+sty
+Package: scrbase 2025/08/28 v3.47 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+.sty
+Package: scrlfile 2025/08/28 v3.47 KOMA-Script package (file load hooks)
+
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+-hook.sty
+Package: scrlfile-hook 2025/08/28 v3.47 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.
+sty
+Package: scrlogo 2025/08/28 v3.47 KOMA-Script package (logo)
+))) (C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.
+sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
+))
+(C:\Users\Jonathan\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic
+.sty
+Package: tocbasic 2025/08/28 v3.47 KOMA-Script package (handling toc-files)
+! Undefined control sequence.
+<argument> \tl_if_eq:VnT 
+                         \everypar {\@nodocument }{\str_if_in:nnTF {,table,f...
+l.282 \tocbasic_define_caption_keys:n {}
+                                         
+Here is how much of TeX's memory you used:
+ 723 strings out of 410532
+ 15256 string characters out of 2812691
+ 366980 words of memory out of 3000000
+ 21965 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 108i,0n,106p,268b,17s stack positions out of 10000i,1000n,20000p,200000b,80000s
+
+No pages of output.
