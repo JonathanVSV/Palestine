@@ -4,6 +4,18 @@ This is a Quarto book.
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.
 
+Para poner código en R es como si fuera chunk de markdown:
+
 ```{r}
 1 + 1
 ```
+
+Poner links: [https://www.rstudio.com/](https://www.rstudio.com/)
+
+Agregar imágenes; hay varias formas, pero esta me ha funcionado
+
+```{r echo=F,out.width = "100%"}
+knitr::include_graphics("cover.png")
+```
+
+Lo demás es sintáxis markdown

@@ -1,8 +1,8 @@
 {
-  "hash": "f89d2cae73031aafc1d0dc4ae48f295e",
+  "hash": "aad7595d560851182a08fb6b2caa533c",
   "result": {
     "engine": "knitr",
-    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
+    "markdown": "# Preface {.unnumbered}\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\nPara poner código en R es como si fuera chunk de markdown:\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\n\n\nPoner links: [https://www.rstudio.com/](https://www.rstudio.com/)\n\nAgregar imágenes; hay varias formas, pero esta me ha funcionado\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](cover.png){width=100%}\n:::\n:::\n\n\n\n\nLo demás es sintáxis markdown",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

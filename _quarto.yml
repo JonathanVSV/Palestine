@@ -7,7 +7,7 @@ book:
   title: "Palestine"
   output-file: "Palestine"
   author: "JF Mas, A Pérez Vega, JV Solórzano"
-  date: Sys.Date()
+  date: last-modified
   page-navigation: true
   sidebar:
     style: docked
@@ -26,7 +26,7 @@ book:
   repo-actions: [edit]
   downloads: [pdf, epub]
   page-footer: 
-    left: "Copyright 2021, Norah Jones" 
+    left: "Copyright 2025, JFM, APV, JVS" 
     right: 
       - icon: github
         href: https://github.com/
@@ -35,10 +35,12 @@ book:
 
 bibliography: references.bib
 csl: citestyle.csl
+highlight-style: pygments
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
+    number-sections: true
   # Faltan algunos paquetes para exportar a pdf  
   # pdf:
   #   documentclass: scrreprt

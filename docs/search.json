@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Palestine",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nPara poner código en R es como si fuera chunk de markdown:\n\n1 + 1\n\n[1] 2\n\n\nPoner links: https://www.rstudio.com/\nAgregar imágenes; hay varias formas, pero esta me ha funcionado\n\n\n\n\n\n\n\n\n\nLo demás es sintáxis markdown",
     "crumbs": [
       "Preface"
     ]
