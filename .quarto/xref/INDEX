@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "c71e7d3b"
+  },
+  "0.intro.qmd": {
+    "0.intro.html": "af74a226"
+  },
+  "1.pre2023.qmd": {
+    "1.pre2023.html": "8e2ff717"
+  },
+  "2.ocupacion.qmd": {
+    "2.ocupacion.html": "185be4b8"
+  },
+  "3.apartheid.qmd": {
+    "3.apartheid.html": "f92ed7bb"
+  },
+  "4.genocidio.qmd": {
+    "4.genocidio.html": "b30c4e6b"
+  },
+  "references.qmd": {
+    "references.html": "9c3f9f7e"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "ddd036be4435266c9b063945d3f63dad",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
