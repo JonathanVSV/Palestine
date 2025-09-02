@@ -24,7 +24,7 @@
     "href": "1.pre2023.html",
     "title": "2  Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)",
     "section": "",
-    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n# No library required for base barplot\ncounts &lt;- c(5, 10, 15, 20)\nbarplot(counts,\n        main = \"Basic Bar Plot\",\n        xlab = \"Categories\",\n        ylab = \"Counts\",\n        col = \"skyblue\",\n        names.arg = c(\"A\", \"B\", \"C\", \"D\"))\n\n\n\n\n\n\n\n\n\n# No library required for base hist\ndata &lt;- rnorm(1000)\nhist(data,\n     main = \"Histogram of Data\",\n    xlab = \"Values\",\n    ylab = \"Frequency\",\n    col = \"lightgreen\",\n    border = \"darkgreen\")",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)</span>"
     ]

@@ -1,9 +1,11 @@
 {
-  "hash": "ddd036be4435266c9b063945d3f63dad",
+  "hash": "4c2de1ccbb9a30d5b575ef7db077a421",
   "result": {
     "engine": "knitr",
-    "markdown": "# Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
-    "supporting": [],
+    "markdown": "# Todo no empezó en octubre de 2023 (historia de la colonización de Palestina)\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# No library required for base barplot\ncounts <- c(5, 10, 15, 20)\nbarplot(counts,\n        main = \"Basic Bar Plot\",\n        xlab = \"Categories\",\n        ylab = \"Counts\",\n        col = \"skyblue\",\n        names.arg = c(\"A\", \"B\", \"C\", \"D\"))\n```\n\n::: {.cell-output-display}\n![](1.pre2023_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# No library required for base hist\ndata <- rnorm(1000)\nhist(data,\n     main = \"Histogram of Data\",\n    xlab = \"Values\",\n    ylab = \"Frequency\",\n    col = \"lightgreen\",\n    border = \"darkgreen\")\n```\n\n::: {.cell-output-display}\n![](1.pre2023_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "1.pre2023_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
