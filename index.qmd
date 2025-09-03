@@ -10,7 +10,7 @@ Para poner código en R es como si fuera chunk de markdown:
 1 + 1
 ```
 
-Poner links: [https://www.rstudio.com/](https://www.rstudio.com/)
+Poner links: <https://www.rstudio.com/>
 
 Agregar imágenes; hay varias formas, pero esta me ha funcionado
 
@@ -19,3 +19,21 @@ knitr::include_graphics("cover.png")
 ```
 
 Lo demás es sintáxis markdown
+
+A ver si jala lo de las cajitas de style.css
+
+:::: {.box data-latex=""}
+::: {.awesomeblock data-latex="{5pt}{\faLightbulb}{darkblue}"}
+Este puede ser el texto de cajitas de lo más político
+:::
+::::
+
+Algo
+
+:::: {.box2 data-latex=""}
+::: {.awesomeblock2 data-latex="{5pt}{\faLightbulb}{darkblue}"}
+Este puede ser el texto de cajitas de las gráficas
+:::
+::::
+
+otras cosas

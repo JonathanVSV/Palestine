@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Palestine",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nPara poner código en R es como si fuera chunk de markdown:\n\n1 + 1\n\n[1] 2\n\n\nPoner links: https://www.rstudio.com/\nAgregar imágenes; hay varias formas, pero esta me ha funcionado\n\n\n\n\n\n\n\n\n\nLo demás es sintáxis markdown",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\nPara poner código en R es como si fuera chunk de markdown:\n\n1 + 1\n\n[1] 2\n\n\nPoner links: https://www.rstudio.com/\nAgregar imágenes; hay varias formas, pero esta me ha funcionado\n\n\n\n\n\n\n\n\n\nLo demás es sintáxis markdown\nA ver si jala lo de las cajitas de style.css\n\n\nEste puede ser el texto de cajitas de lo más político\n\n\nAlgo\n\n\nEste puede ser el texto de cajitas de las gráficas\n\n\notras cosas",
     "crumbs": [
       "Preface"
     ]
@@ -14,7 +14,7 @@
     "href": "0.intro.html",
     "title": "1  Intro",
     "section": "",
-    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2\n\n\nPrueba para git.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
     ]

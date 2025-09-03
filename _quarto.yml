@@ -41,6 +41,7 @@ format:
   html:
     theme: flatly
     number-sections: true
+    css: style.css
   # Faltan algunos paquetes para exportar a pdf  
   # pdf:
   #   documentclass: scrreprt
