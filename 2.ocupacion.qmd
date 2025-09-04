@@ -1,9 +1,23 @@
 # La Ocupación
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+```{r}
+# No library required for base barplot
+counts <- c(5, 10, 15, 20)
+barplot(counts,
+        main = "Basic Bar Plot",
+        xlab = "Categories",
+        ylab = "Counts",
+        col = "skyblue",
+        names.arg = c("A", "B", "C", "D"))
+```
 
 ```{r}
-1 + 1
+# No library required for base hist
+data <- rnorm(1000)
+hist(data,
+     main = "Histogram of Data",
+    xlab = "Values",
+    ylab = "Frequency",
+    col = "lightgreen",
+    border = "darkgreen")
 ```

@@ -1,9 +1,11 @@
 {
-  "hash": "80fe64a8321f8c910bff3fd60537f875",
+  "hash": "04dbd3d33fa83960b52eb2b0c2f97720",
   "result": {
     "engine": "knitr",
-    "markdown": "# La Ocupación\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
-    "supporting": [],
+    "markdown": "# La Ocupación\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# No library required for base barplot\ncounts <- c(5, 10, 15, 20)\nbarplot(counts,\n        main = \"Basic Bar Plot\",\n        xlab = \"Categories\",\n        ylab = \"Counts\",\n        col = \"skyblue\",\n        names.arg = c(\"A\", \"B\", \"C\", \"D\"))\n```\n\n::: {.cell-output-display}\n![](2.ocupacion_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# No library required for base hist\ndata <- rnorm(1000)\nhist(data,\n     main = \"Histogram of Data\",\n    xlab = \"Values\",\n    ylab = \"Frequency\",\n    col = \"lightgreen\",\n    border = \"darkgreen\")\n```\n\n::: {.cell-output-display}\n![](2.ocupacion_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "2.ocupacion_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

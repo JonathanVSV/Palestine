@@ -1,4 +1,6 @@
-# Preface {.unnumbered}
+# Prefacio {.unnumbered}
+
+Por el momento aquí vienen las guías de cómo agregar código y cajitas informativas.
 
 This is a Quarto book.
 
@@ -15,7 +17,7 @@ Poner links: <https://www.rstudio.com/>
 Agregar imágenes; hay varias formas, pero esta me ha funcionado
 
 ```{r echo=F,out.width = "100%"}
-knitr::include_graphics("cover.png")
+knitr::include_graphics("imgs/freepalestine.png")
 ```
 
 Lo demás es sintáxis markdown

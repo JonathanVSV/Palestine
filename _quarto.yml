@@ -4,7 +4,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Palestine"
+  title: "Mapas y gráficas contra el genocidio"
   output-file: "Palestine"
   author: "JF Mas, A Pérez Vega, JV Solórzano"
   date: last-modified

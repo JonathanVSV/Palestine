@@ -1,9 +1,69 @@
 # El Genocidio
 
-This is a Quarto book.
+## Víctimas del genocidio
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Obtener datos mediante API
+
+```{r message=FALSE}
+# Paquetes
+library(httr2)
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+library(cowplot)
+```
 
 ```{r}
-1 + 1
+# Killed in Gaza
+# Connect to API and download data
+resp <- httr2::request("https://data.techforpalestine.org/api/v2/") |> 
+  # Then we location on path
+  httr2::req_url_path_append("killed-in-gaza.min.json") |> 
+  httr2::req_perform()
+
+# transform to df
+df <- resp |>
+  httr2::resp_body_json(check_type = FALSE, 
+                        simplifyVector = TRUE) 
+
+# Preprocesamiento
+df <- df |>
+  # Transformar datos en fecha
+  mutate(across(dob, ~ymd(.x))) |>
+  mutate(year = year(dob)) |>
+  # Transformar niveles de sexo
+  mutate(across(sex, ~ifelse(.x == "m", "Masculino", "Femenino"))) 
 ```
+
+Un total de `{r} prettyNum(nrow(df), big.mark = ",", scientific = FALSE)` personas asesinadas en Gaza desde `{r} min(as.numeric(df$year))` a `{r} max(as.numeric(df$year))`.
+
+```{r}
+df |>
+  # Resumir por año y sexo
+  group_by(year, sex) |>
+  count() |>
+  ## HAcer plot
+  ggplot(aes(x = year,
+             y = n,
+             fill = sex)) +
+  geom_col() +
+  # Personalizar colores
+  scale_fill_manual(values = c("#00aa9a", "#f4992c")) +
+  scale_x_continuous(expand = c(0,0))+
+  scale_y_continuous(expand = c(0,0))+
+  labs(x = "Año", 
+       y = "Personas asesinadas", 
+       fill = "Sexo") +
+  # Poner tema cowplot
+  theme_cowplot()
+```
+
+Graficas de barra (barplot)
+- barplot clasico: número de periodistas asesinados, ver nota https://aje.io/ieh8dd
+
+- barplot horizontal en dos partes (tipo pirámides de edad hombre/mujer) que contrastan cada año número de victimas de violencias israelis y palestinos (datos en https://fr.statista.com/statistiques/1328063/nombre-victmes-palestiniens-israeliens-israel/) y https://visualizingpalestine.org/visual/timeline-of-violence-october-2023/
+
+
+
+
+

@@ -1,9 +1,11 @@
 {
-  "hash": "93bf79dde231dd29137c36e72ea8365e",
+  "hash": "2241fe6dd68d64787c2677887073c48b",
   "result": {
     "engine": "knitr",
-    "markdown": "# El Genocidio\n\nThis is a Quarto book.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
-    "supporting": [],
+    "markdown": "# El Genocidio\n\n## Víctimas del genocidio\n\nObtener datos mediante API\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Paquetes\nlibrary(httr2)\nlibrary(ggplot2)\nlibrary(lubridate)\nlibrary(dplyr)\nlibrary(cowplot)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# Killed in Gaza\n# Connect to API and download data\nresp <- httr2::request(\"https://data.techforpalestine.org/api/v2/\") |> \n  # Then we location on path\n  httr2::req_url_path_append(\"killed-in-gaza.min.json\") |> \n  httr2::req_perform()\n\n# transform to df\ndf <- resp |>\n  httr2::resp_body_json(check_type = FALSE, \n                        simplifyVector = TRUE) \n\n# Preprocesamiento\ndf <- df |>\n  # Transformar datos en fecha\n  mutate(across(dob, ~ymd(.x))) |>\n  mutate(year = year(dob)) |>\n  # Transformar niveles de sexo\n  mutate(across(sex, ~ifelse(.x == \"m\", \"Masculino\", \"Femenino\"))) \n```\n:::\n\n\n\n\nUn total de 60\\,199 personas asesinadas en Gaza desde 1914 a 2025.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf |>\n  # Resumir por año y sexo\n  group_by(year, sex) |>\n  count() |>\n  ## HAcer plot\n  ggplot(aes(x = year,\n             y = n,\n             fill = sex)) +\n  geom_col() +\n  # Personalizar colores\n  scale_fill_manual(values = c(\"#00aa9a\", \"#f4992c\")) +\n  scale_x_continuous(expand = c(0,0))+\n  scale_y_continuous(expand = c(0,0))+\n  labs(x = \"Año\", \n       y = \"Personas asesinadas\", \n       fill = \"Sexo\") +\n  # Poner tema cowplot\n  theme_cowplot()\n```\n\n::: {.cell-output-display}\n![](4.genocidio_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\n\n\nGraficas de barra (barplot)\n- barplot clasico: número de periodistas asesinados, ver nota https://aje.io/ieh8dd\n\n- barplot horizontal en dos partes (tipo pirámides de edad hombre/mujer) que contrastan cada año número de victimas de violencias israelis y palestinos (datos en https://fr.statista.com/statistiques/1328063/nombre-victmes-palestiniens-israeliens-israel/) y https://visualizingpalestine.org/visual/timeline-of-violence-october-2023/\n\n\n\n\n\n",
+    "supporting": [
+      "4.genocidio_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

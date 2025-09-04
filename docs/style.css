@@ -16,24 +16,25 @@ pre code {
 /*------------- Body and header text---------------- */
 
 .book.font-family-1 {
-  font-family: 'Muli', serif;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Prata', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   color: #1d4c55;
 }
 
 .title {
-  font-family: 'Prata', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 3em !important;
   color: #1d4c55;
  }
 
 .subtitle {
-  font-family: 'Prata', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   color: #1d4c55;
 }
+
 
 /*-----Body Links-------*/
 
