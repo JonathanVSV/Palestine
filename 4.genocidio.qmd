@@ -2,7 +2,9 @@
 
 ## Víctimas del genocidio
 
-Obtener datos mediante API
+Víctimas del genocidio a partir del 7 de octubre de 2023.
+
+Obtener datos mediante API.
 
 ```{r message=FALSE}
 # Paquetes
@@ -12,6 +14,44 @@ library(lubridate)
 library(dplyr)
 library(cowplot)
 ```
+
+```{r}
+# Casualties_daily
+# Connect to API and download data
+resp <- httr2::request("https://data.techforpalestine.org/api/v2/") |> 
+  # Then we location on path
+  httr2::req_url_path_append("casualties_daily.json") |> 
+  httr2::req_perform()
+
+# transform to df
+df <- resp |>
+  httr2::resp_body_json(check_type = FALSE, 
+                        simplifyVector = TRUE) 
+
+# Preprocesamiento
+df <- df |>
+  mutate(across(report_date, ~ymd(.x)))
+```
+
+Un total de `{r} prettyNum(df$killed_cum[nrow(df)], big.mark = ",", scientific = FALSE)` personas asesinadas en Gaza desde el 7 de octubre de 2023.
+
+```{r}
+df |>
+  ## HAcer plot
+  ggplot(aes(x = report_date,
+             y = killed_cum)) +
+  geom_col(fill = "#dc0e34") +
+  scale_x_date(expand = c(0.1,0.1))+
+  scale_y_continuous(expand = c(0,0),
+                     labels = scales::comma)+
+  labs(x = "Fecha", 
+       y = "Personas asesinadas (acumulado)", 
+       fill = "Sexo") +
+  # Poner tema cowplot
+  theme_cowplot()
+```
+
+## Víctimas por sexo y edad
 
 ```{r}
 # Killed in Gaza
@@ -28,36 +68,37 @@ df <- resp |>
 
 # Preprocesamiento
 df <- df |>
-  # Transformar datos en fecha
-  mutate(across(dob, ~ymd(.x))) |>
-  mutate(year = year(dob)) |>
   # Transformar niveles de sexo
-  mutate(across(sex, ~ifelse(.x == "m", "Masculino", "Femenino"))) 
+  mutate(across(sex, ~ifelse(.x == "m", "Masculino", "Femenino"))) |>
+  mutate(age_c = cut(age,
+                           breaks = seq(0,100,5),
+                           labels = seq(5,100,5),
+                           right = FALSE)) |>
+  group_by(age_c, sex) |>
+  count() |>
+  ungroup() |>
+  mutate(pop = case_when(
+      sex == "Masculino" ~ -n,
+      TRUE ~ n
+    ))
 ```
-
-Un total de `{r} prettyNum(nrow(df), big.mark = ",", scientific = FALSE)` personas asesinadas en Gaza desde `{r} min(as.numeric(df$year))` a `{r} max(as.numeric(df$year))`.
 
 ```{r}
 df |>
-  # Resumir por año y sexo
-  group_by(year, sex) |>
-  count() |>
   ## HAcer plot
-  ggplot(aes(x = year,
-             y = n,
+  ggplot(aes(x = pop,
+             y = age_c,
              fill = sex)) +
   geom_col() +
-  # Personalizar colores
-  scale_fill_manual(values = c("#00aa9a", "#f4992c")) +
+  scale_fill_manual(values = c("#f49a28", "#0dab9b")) +
   scale_x_continuous(expand = c(0,0))+
-  scale_y_continuous(expand = c(0,0))+
-  labs(x = "Año", 
+  scale_y_discrete(expand = c(0,0))+
+  labs(x = "Número de personas", 
        y = "Personas asesinadas", 
        fill = "Sexo") +
   # Poner tema cowplot
   theme_cowplot()
 ```
-
 Graficas de barra (barplot)
 - barplot clasico: número de periodistas asesinados, ver nota https://aje.io/ieh8dd
 
