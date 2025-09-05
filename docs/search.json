@@ -54,7 +54,7 @@
     "href": "2.ocupacion.html",
     "title": "3  La Ocupación",
     "section": "",
-    "text": "4 Que queremos mostrar\nRegimen de ocupación militar\nApartheid/segregación\npartición del territorio (zonas A, B y C)\ncheck points, bypass roads, muro de separación\ndetenciones administrativas\ndestrucciones de casas\ndestrucción de huertas\nproceso de colonización\nacaparamiento de los recursos\ndependencia de la economía palestina\n#Graficas e ilustraciones posibles\nLibro Comprendre la Palestine\nconsomacion agua palestiniens vs israleliens p117\npop isr en los territoirios pal 1990 2020 p 119\ndemoliciones de casa p 121\ndetenciones y carceles p 128-129\noslo y las zonas abc , mapa zonas p 157\neconomie sous tutelle p 163\npib isr y palest p 164\n\n# No library required for base barplot\ncounts &lt;- c(5, 10, 15, 20)\nbarplot(counts,\n        main = \"Basic Bar Plot\",\n        xlab = \"Categories\",\n        ylab = \"Counts\",\n        col = \"skyblue\",\n        names.arg = c(\"A\", \"B\", \"C\", \"D\"))\n\n\n\n\n\n\n\n\n\n# No library required for base hist\ndata &lt;- rnorm(1000)\nhist(data,\n     main = \"Histogram of Data\",\n    xlab = \"Values\",\n    ylab = \"Frequency\",\n    col = \"lightgreen\",\n    border = \"darkgreen\")",
+    "text": "3.1 Qué queremos mostrar\nRegimen de ocupación militar\nApartheid/segregación\npartición del territorio (zonas A, B y C)\ncheck points, bypass roads, muro de separación\ndetenciones administrativas\ndestrucciones de casas\ndestrucción de huertas\nproceso de colonización\nacaparamiento de los recursos\ndependencia de la economía palestina\n#Graficas e ilustraciones posibles\nLibro Comprendre la Palestine\nconsomacion agua palestiniens vs israleliens p117\npop isr en los territoirios pal 1990 2020 p 119\ndemoliciones de casa p 121\ndetenciones y carceles p 128-129\noslo y las zonas abc , mapa zonas p 157\neconomie sous tutelle p 163\npib isr y palest p 164\n# No library required for base barplot\ncounts &lt;- c(5, 10, 15, 20)\nbarplot(counts,\n        main = \"Basic Bar Plot\",\n        xlab = \"Categories\",\n        ylab = \"Counts\",\n        col = \"skyblue\",\n        names.arg = c(\"A\", \"B\", \"C\", \"D\"))\n# No library required for base hist\ndata &lt;- rnorm(1000)\nhist(data,\n     main = \"Histogram of Data\",\n    xlab = \"Values\",\n    ylab = \"Frequency\",\n    col = \"lightgreen\",\n    border = \"darkgreen\")",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>La Ocupación</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "4.gaza.html",
     "title": "5  Gaza",
     "section": "",
-    "text": "5.1 Que queremos mostrar\nbreve historia de Gaza (Ocupacion egiptia, retirada colonos israelis en 2005, Hamas\nbloqueo, y guerras contra gaza\n##Gráficas/mapas\nEn Atlas des palestiniens (2017)\nenfermement de Gaza\ndensidad poblacion gaza mapa p91\ncronologie operations et conflits a Gaza p 95\nexplotación de los trabajadores (taxas para pasar trabajar a israel)\nEn Comprendre la Palestine\ngaza mapa bloqueo marítimo p 123\ncronologie graphe bataille de gaza 211\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n1 + 1\n\n[1] 2",
+    "text": "5.1 Qué queremos mostrar\nbreve historia de Gaza (Ocupacion egiptia, retirada colonos israelis en 2005, Hamas\nbloqueo, y guerras contra gaza\n##Gráficas/mapas\nEn Atlas des palestiniens (2017)\nenfermement de Gaza\ndensidad poblacion gaza mapa p91\ncronologie operations et conflits a Gaza p 95\nexplotación de los trabajadores (taxas para pasar trabajar a israel)\nEn Comprendre la Palestine\ngaza mapa bloqueo marítimo p 123\ncronologie graphe bataille de gaza 211\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n1 + 1\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Gaza</span>"
     ]
@@ -84,7 +84,17 @@
     "href": "5.genocidio.html",
     "title": "6  El Genocidio",
     "section": "",
-    "text": "6.1 Número de víctimas del genocidio\nVíctimas del genocidio a partir del 7 de octubre de 2023.\nObtener datos mediante API.\n# Paquetes\nlibrary(httr2)\nlibrary(ggplot2)\nlibrary(lubridate)\nlibrary(dplyr)\nlibrary(cowplot)\n# Casualties_daily\n# Connect to API and download data\nresp &lt;- httr2::request(\"https://data.techforpalestine.org/api/v2/\") |&gt; \n  # Then we location on path\n  httr2::req_url_path_append(\"casualties_daily.json\") |&gt; \n  httr2::req_perform()\n\n# transform to df\ndf &lt;- resp |&gt;\n  httr2::resp_body_json(check_type = FALSE, \n                        simplifyVector = TRUE) \n\n# Preprocesamiento\ndf &lt;- df |&gt;\n  mutate(across(report_date, ~ymd(.x)))\nUn total de 64,300 personas asesinadas en Gaza desde el 7 de octubre de 2023.\ndf |&gt;\n  ## HAcer plot\n  ggplot(aes(x = report_date,\n             y = killed_cum)) +\n  geom_col(fill = \"#dc0e34\") +\n  scale_x_date(expand = c(0.1,0.1))+\n  scale_y_continuous(expand = c(0,0),\n                     labels = scales::comma)+\n  labs(x = \"Fecha\", \n       y = \"Personas asesinadas (acumulado)\", \n       fill = \"Sexo\") +\n  # Poner tema cowplot\n  theme_cowplot()\n\nWarning: Removed 7 rows containing missing values or values outside the scale range\n(`geom_col()`).",
+    "text": "6.1 Qué queremos mostrar\nLos diferentes aspectos de un genocidio:\nnumeros desproporcionado de víctimas\nmuertes de civiles incluyendo muchas mujeres, niños y ancianos\ndestruccion de infraestructura (ver libro palestine de A Gresh)\ndescruccion de cultivo\nfamina provocada\nGraficas\nNumero de muertas de un lado y del otro\nImagen de satelite aŕeas agrícolas\nImagen de sattélite áreas urbanas\nedad de las victimas",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>El Genocidio</span>"
+    ]
+  },
+  {
+    "objectID": "5.genocidio.html#número-de-víctimas-del-genocidio",
+    "href": "5.genocidio.html#número-de-víctimas-del-genocidio",
+    "title": "6  El Genocidio",
+    "section": "6.2 Número de víctimas del genocidio",
+    "text": "6.2 Número de víctimas del genocidio\nVíctimas del genocidio a partir del 7 de octubre de 2023.\nObtener datos mediante API.\n\n# Paquetes\nlibrary(httr2)\nlibrary(ggplot2)\nlibrary(lubridate)\nlibrary(dplyr)\nlibrary(cowplot)\n\n\n# Casualties_daily\n# Connect to API and download data\nresp &lt;- httr2::request(\"https://data.techforpalestine.org/api/v2/\") |&gt; \n  # Then we location on path\n  httr2::req_url_path_append(\"casualties_daily.json\") |&gt; \n  httr2::req_perform()\n\n# transform to df\ndf &lt;- resp |&gt;\n  httr2::resp_body_json(check_type = FALSE, \n                        simplifyVector = TRUE) \n\n# Preprocesamiento\ndf &lt;- df |&gt;\n  mutate(across(report_date, ~ymd(.x)))\n\nUn total de 64,300 personas asesinadas en Gaza desde el 7 de octubre de 2023.\n\ndf |&gt;\n  ## HAcer plot\n  ggplot(aes(x = report_date,\n             y = killed_cum)) +\n  geom_col(fill = \"#dc0e34\") +\n  scale_x_date(expand = c(0.1,0.1))+\n  scale_y_continuous(expand = c(0,0),\n                     labels = scales::comma)+\n  labs(x = \"Fecha\", \n       y = \"Personas asesinadas (acumulado)\", \n       fill = \"Sexo\") +\n  # Poner tema cowplot\n  theme_cowplot()\n\nWarning: Removed 7 rows containing missing values or values outside the scale range\n(`geom_col()`).",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>El Genocidio</span>"
     ]
@@ -93,8 +103,8 @@
     "objectID": "5.genocidio.html#víctimas-por-sexo-y-edad",
     "href": "5.genocidio.html#víctimas-por-sexo-y-edad",
     "title": "6  El Genocidio",
-    "section": "6.2 Víctimas por sexo y edad",
-    "text": "6.2 Víctimas por sexo y edad\n\n# Killed in Gaza\n# Connect to API and download data\nresp &lt;- httr2::request(\"https://data.techforpalestine.org/api/v2/\") |&gt; \n  # Then we location on path\n  httr2::req_url_path_append(\"killed-in-gaza.min.json\") |&gt; \n  httr2::req_perform()\n\n# transform to df\ndf &lt;- resp |&gt;\n  httr2::resp_body_json(check_type = FALSE, \n                        simplifyVector = TRUE) \n\n# Preprocesamiento\ndf &lt;- df |&gt;\n  # Transformar niveles de sexo\n  mutate(across(sex, ~ifelse(.x == \"m\", \"Masculino\", \"Femenino\"))) |&gt;\n  mutate(age_c = cut(age,\n                           breaks = seq(0,100,5),\n                           labels = seq(5,100,5),\n                           right = FALSE)) |&gt;\n  group_by(age_c, sex) |&gt;\n  count() |&gt;\n  ungroup() |&gt;\n  mutate(pop = case_when(\n      sex == \"Masculino\" ~ -n,\n      TRUE ~ n\n    ))\n\n\ndf |&gt;\n  ## HAcer plot\n  ggplot(aes(x = pop,\n             y = age_c,\n             fill = sex)) +\n  geom_col() +\n  scale_fill_manual(values = c(\"#f49a28\", \"#0dab9b\")) +\n  scale_x_continuous(expand = c(0,0))+\n  scale_y_discrete(expand = c(0,0))+\n  labs(x = \"Número de personas\", \n       y = \"Personas asesinadas\", \n       fill = \"Sexo\") +\n  # Poner tema cowplot\n  theme_cowplot()\n\n\n\n\n\n\n\n\nGraficas de barra (barplot) - barplot clasico: número de periodistas asesinados, ver nota https://aje.io/ieh8dd\n\nbarplot horizontal en dos partes (tipo pirámides de edad hombre/mujer) que contrastan cada año número de victimas de violencias israelis y palestinos (datos en https://fr.statista.com/statistiques/1328063/nombre-victmes-palestiniens-israeliens-israel/) y https://visualizingpalestine.org/visual/timeline-of-violence-october-2023/",
+    "section": "6.3 Víctimas por sexo y edad",
+    "text": "6.3 Víctimas por sexo y edad\n\n# Killed in Gaza\n# Connect to API and download data\nresp &lt;- httr2::request(\"https://data.techforpalestine.org/api/v2/\") |&gt; \n  # Then we location on path\n  httr2::req_url_path_append(\"killed-in-gaza.min.json\") |&gt; \n  httr2::req_perform()\n\n# transform to df\ndf &lt;- resp |&gt;\n  httr2::resp_body_json(check_type = FALSE, \n                        simplifyVector = TRUE) \n\n# Preprocesamiento\ndf &lt;- df |&gt;\n  # Transformar niveles de sexo\n  mutate(across(sex, ~ifelse(.x == \"m\", \"Masculino\", \"Femenino\"))) |&gt;\n  mutate(age_c = cut(age,\n                           breaks = seq(0,100,5),\n                           labels = seq(5,100,5),\n                           right = FALSE)) |&gt;\n  group_by(age_c, sex) |&gt;\n  count() |&gt;\n  ungroup() |&gt;\n  mutate(pop = case_when(\n      sex == \"Masculino\" ~ -n,\n      TRUE ~ n\n    ))\n\n\ndf |&gt;\n  ## HAcer plot\n  ggplot(aes(x = pop,\n             y = age_c,\n             fill = sex)) +\n  geom_col() +\n  scale_fill_manual(values = c(\"#f49a28\", \"#0dab9b\")) +\n  scale_x_continuous(expand = c(0,0))+\n  scale_y_discrete(expand = c(0,0))+\n  labs(x = \"Número de personas\", \n       y = \"Personas asesinadas\", \n       fill = \"Sexo\") +\n  # Poner tema cowplot\n  theme_cowplot()\n\n\n\n\n\n\n\n\nGraficas de barra (barplot) - barplot clasico: número de periodistas asesinados, ver nota https://aje.io/ieh8dd\n\nbarplot horizontal en dos partes (tipo pirámides de edad hombre/mujer) que contrastan cada año número de victimas de violencias israelis y palestinos (datos en https://fr.statista.com/statistiques/1328063/nombre-victmes-palestiniens-israeliens-israel/) y https://visualizingpalestine.org/visual/timeline-of-violence-october-2023/",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>El Genocidio</span>"
     ]
@@ -104,14 +114,14 @@
     "href": "6.complicidad.html",
     "title": "7  Complicidad",
     "section": "",
-    "text": "7.1 Que queremos mostrar\nMapas y graficas\nMapas países representados en la las Naciones Unidas en 1948\nNumeros de condenaciones por ONU, numero de vetos\nEn Israel le nouvel apartheid 2013\nles colons d abord La mitie aveugle de l occident\nEn Atlas des palestiniens L ONU et le verrou americain\nLos sesgos en el tratamiento palestinos/israelis en los periodicos occidentales\napoyo militar (US$) de USA",
+    "text": "7.1 Qué queremos mostrar\nMapas y graficas\nMapas países representados en la las Naciones Unidas en 1948\nNumeros de condenaciones por ONU, numero de vetos\nEn Israel le nouvel apartheid 2013\nles colons d abord La mitie aveugle de l occident\nEn Atlas des palestiniens L ONU et le verrou americain\nLos sesgos en el tratamiento palestinos/israelis en los periodicos occidentales\napoyo militar (US$) de USA",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Complicidad</span>"
     ]
   },
   {
-    "objectID": "6.complicidad.html#que-queremos-mostrar",
-    "href": "6.complicidad.html#que-queremos-mostrar",
+    "objectID": "6.complicidad.html#qué-queremos-mostrar",
+    "href": "6.complicidad.html#qué-queremos-mostrar",
     "title": "7  Complicidad",
     "section": "",
     "text": "proyecto colonial europeo\napoyo militar, diplomático y de narrativa",
