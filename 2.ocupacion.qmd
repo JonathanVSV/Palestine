@@ -1,4 +1,43 @@
 # La Ocupación
+# Que queremos mostrar
+
+Regimen de ocupación militar
+
+Apartheid/segregación
+
+partición del territorio (zonas A, B y C)
+
+check points, bypass roads, muro de separación
+
+detenciones administrativas
+
+destrucciones de casas
+
+destrucción de huertas
+
+proceso de colonización
+
+acaparamiento de los recursos
+
+dependencia de la economía palestina
+
+#Graficas e ilustraciones posibles
+
+Libro Comprendre la Palestine
+
+consomacion agua palestiniens vs israleliens p117
+
+pop isr en los territoirios pal 1990 2020 p 119
+
+demoliciones de casa p 121
+
+detenciones y carceles p 128-129
+
+oslo y las zonas abc , mapa zonas p 157
+
+economie sous tutelle p 163
+
+pib isr y palest p 164
 
 ```{r}
 # No library required for base barplot

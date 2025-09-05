@@ -1,0 +1,31 @@
+# Gaza
+
+## Que queremos mostrar
+
+breve historia de Gaza (Ocupacion egiptia, retirada colonos israelis en 2005, Hamas
+
+bloqueo, y guerras contra gaza
+
+##Gráficas/mapas
+
+En *Atlas des palestiniens (2017)*
+
+enfermement de Gaza
+
+densidad poblacion gaza mapa p91
+
+cronologie operations et conflits a Gaza p 95
+
+explotación de los trabajadores (taxas para pasar trabajar a israel)
+
+En 	*Comprendre la Palestine*
+
+gaza mapa bloqueo marítimo p 123
+
+cronologie graphe bataille de gaza 211
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r}
+1 + 1
+```

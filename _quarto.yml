@@ -19,7 +19,9 @@ book:
     - 1.pre2023.qmd
     - 2.ocupacion.qmd
     - 3.apartheid.qmd
-    - 4.genocidio.qmd
+    - 4.gaza.qmd
+    - 5.genocidio.qmd
+    - 6.complicidad.qmd
     - references.qmd
   search: true
   # repo-url: https://github.com/jjallaire/hopr/
